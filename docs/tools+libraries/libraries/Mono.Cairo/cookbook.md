@@ -31,7 +31,8 @@ public class CairoAntialias
         using (Context gr = new Context(draw)){
                 gr.Antialias = Antialias.Subpixel;    // sets the anti-aliasing method
                 gr.LineWidth = 9;          // sets the line width
-                gr.Color = new Color (0, 0, 0, 1);   // red, green, blue, alpha
+                //gr.Color = new Color (0, 0, 0, 1);   // red, green, blue, alpha
+                gr.SetSourceColor(new Color (0,0,0,1)); // In Mono 4.8, it has been change to use "SetSourceColor" method
                 gr.MoveTo (10, 10);          // sets the Context's start point.
                 gr.LineTo (40, 60);          // draws a "virtual" line from 5,5 to 20,30
                 gr.Stroke ();          //stroke the line to the image surface
